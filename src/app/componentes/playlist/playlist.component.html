@@ -1,0 +1,88 @@
+<div style="text-align: center;margin: 20px;">
+    <button type="button" style="width: 500px;" class="btn btn-outline-success" data-toggle="modal"
+        data-target="#modalCrear">+ nueva playlist</button>
+
+</div>
+
+
+<div class="card-columns">
+    <div data-toggle="modal" data-target="#exampleModalScrollable" *ngFor="let playlist of misPlaylist"
+        class="card rounded-sm" style="background-color: #262626 ; text-align: center;">
+        <div (click)="verCancionesPlaylist(playlist.id,playlist.name)">
+            <img *ngIf="playlist.images.length == 0, else imgOk" src="assets/img/imgNoDisponible.jpg"
+                class="card-img-top">
+
+            <ng-template #imgOk>
+                <img src="{{playlist.images[0].url}}" class="card-img-top">
+            </ng-template>
+            <hr>
+            <h5 class="card-title">{{playlist.name}}</h5>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal crear -->
+<div class="modal fade" id="modalCrear" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Canciones {{playlistName}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div style="margin: 20px;">
+                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" #namePlaylist>
+                </div>
+
+                <div style="margin: 20px;">
+                    <input type="text" class="form-control" placeholder="Descripcion" aria-label="Descripcion" #detailPlaylist>
+                </div>
+
+                <div style="margin: 20px;text-align: center;">
+                    <button (click)="addNewPlaylist(namePlaylist.value,detailPlaylist.value)" data-dismiss="modal" type="button" class="btn btn-outline-success">crear</button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal canciones -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Canciones {{playlistName}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="container" *ngFor="let cancion of canciones">
+                    <div class="row">
+
+
+                        <div class="col-sm">
+                            <iframe class="dar"
+                                [src]="cancion.track.id | domseguro:'https://open.spotify.com/embed/track/'" width="300"
+                                height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

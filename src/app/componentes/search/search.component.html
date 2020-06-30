@@ -1,0 +1,15 @@
+<div class="card-columns" >
+  <div  class="card rounded-sm" style="background-color: #262626 ; text-align: center;" *ngFor="let artista of artistasConsultados">
+    <img (click)="detalleArtista(artista.id)" *ngIf="artista.images.length == 0, else imgOk" src="assets/img/imgNoDisponible.jpg" class="card-img-top">
+    
+    <ng-template #imgOk >
+      <img (click)="detalleArtista(artista.id)" src="{{artista.images[0].url}}" class="card-img-top" >
+    </ng-template>
+  
+    <div class="card-body">
+      <h5 class="card-title text-light">{{artista.name}}</h5>
+      <span class="badge badge-pill badge-success"*ngFor="let genero of artista.genres">{{genero}}</span>
+  </div>
+  </div>      
+</div>
+
