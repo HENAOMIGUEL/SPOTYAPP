@@ -13,6 +13,7 @@ import { ArtistaComponent } from './componentes/artista/artista.component';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { PlaylistComponent } from './componentes/playlist/playlist.component';
 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PlaylistComponent } from './componentes/playlist/playlist.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [SpotyService],
   bootstrap: [AppComponent]
