@@ -5,6 +5,10 @@
 </div>
 
 
+
+
+
+
 <div class="card-columns">
     <div data-toggle="modal" data-target="#exampleModalScrollable" *ngFor="let playlist of misPlaylist"
         class="card rounded-sm" style="background-color: #262626 ; text-align: center;">
@@ -42,11 +46,13 @@
                 </div>
 
                 <div style="margin: 20px;">
-                    <input type="text" class="form-control" placeholder="Descripcion" aria-label="Descripcion" #detailPlaylist>
+                    <input type="text" class="form-control" placeholder="Descripcion" aria-label="Descripcion"
+                        #detailPlaylist>
                 </div>
 
                 <div style="margin: 20px;text-align: center;">
-                    <button (click)="addNewPlaylist(namePlaylist.value,detailPlaylist.value)" data-dismiss="modal" type="button" class="btn btn-outline-success">crear</button>
+                    <button (click)="addNewPlaylist(namePlaylist.value,detailPlaylist.value)" data-dismiss="modal"
+                        type="button" class="btn btn-outline-success">crear</button>
 
                 </div>
 
@@ -69,8 +75,9 @@
                 </button>
             </div>
             <div class="modal-body">
-
-                <div class="container" *ngFor="let cancion of canciones">
+                <iframe [src]="rutaPlayerPlaylist | domseguro:'https://open.spotify.com/embed/playlist/'" width="400" height="500" frameborder="0" allowtransparency="true"
+                    allow="encrypted-media"></iframe>
+                 <!--<div class="container" *ngFor="let cancion of canciones">
                     <div class="row">
 
 
@@ -80,7 +87,7 @@
                                 height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </div>

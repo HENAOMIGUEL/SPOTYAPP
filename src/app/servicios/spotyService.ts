@@ -15,7 +15,7 @@ export class SpotyService {
         header = header.set('Authorization', 'BQDuAFbjoochesKm1OTN4h2aKoAaj2uX_VCgJvnCEGt2CcurZ6UfdJ6rF3_vZbLyI2-CDpPw6qSlLM6ppaaKIQ35Qbv4hC4cIprD69ixosEF0qG1TlvN6oZ7j-7KkyhIrY6ZoyMMF_C-V1gXCgHXTLio__WuR3Xs5opuXVSHx_pkvFcxaNf_60v4gX77B_6NJ60fUgOGSPIztD1pEUAo9ubg9fz4imum_HnURlyxq8Xtbuv7N2mWDx60HOXICVYz7FtTDW5ALCZfry6FCk3I56d_zcpNjbaRTyrQ'
         );*/
         const headers = new HttpHeaders({
-            'Authorization': 'Bearer BQBC06vVGIQvwW77eCdxrP-coTM-M8YiCJ50Jcm_9gaEC1oKU2YKtr2MJWwlIiDIjtxivtSweLG_QUQAebo84Suj76wIUigxZtpU5zoejNQU87VTyqwd7E0_fcl8w8lZpfTsBguJb-eAalCon9whWG_JfauydFR3cbBUIOaKOIwDu91hQNWup90IfPLeTZGP0mjz49WORNeGa8hv07G4zXiFxo-sC8VoIq5AeBoKDbHnJ-7Ayrg0eFESpe5O6bW_gfNk18iimhor2o1hB812h-EISwCmPaeut9BM'
+            'Authorization': 'Bearer BQCnAKHelAaxJzYlztcbUQ5tn6T_wLCIzwMDX_cpJx80TncQ6nNc_8epcPejWhajrtdKKfDsKp3448UnbQsdcBx-nY_UHWgs2ZnaS-3tla1QZWrwfE7IAkxHReNlDVQvDKg78q72gT99UkwDH2ekwcpaR8Af1bx5YaH89hHz5lDxrrov0V2wwdF3HkSN7YDKxZJ_9psXk6afT0WE2rPLMs1AUxIdXmqwjE8Di-AmiT9TixvHkiuEruqClcc_-V_adJECgvciIwvcNUE8QW5NEaB-foDMY4Hdonha'
         });
 
         return headers;

@@ -12,6 +12,7 @@ export class PlaylistComponent implements OnInit {
   misPlaylist: any[] = [];
   canciones: any[] = [];
   playlistName;
+  rutaPlayerPlaylist;
 
   constructor(private router: Router,
     private spotyService: SpotyService) { }
@@ -27,9 +28,15 @@ export class PlaylistComponent implements OnInit {
   verCancionesPlaylist(playlistID: string, playlistName: string) {
     this.playlistName = playlistName;
 
+    this.rutaPlayerPlaylist = "";
+    this.rutaPlayerPlaylist =playlistID;
+
+    console.log(this.rutaPlayerPlaylist);
+    
     this.spotyService.getPlaylistItems(playlistID)
       .subscribe((data: any) => {
         this.canciones = data.items;
+        
         console.log(this.canciones);
       });
 
