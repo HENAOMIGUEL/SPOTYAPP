@@ -8,7 +8,7 @@ import { SpotyService } from 'src/app/servicios/spotyService';
 export class InicioComponent implements OnInit {
 
   listaNewReleases : any[]=[];
-
+  albums : any[] = [];
   constructor(private spotyService:SpotyService) { }
 
 
@@ -17,10 +17,33 @@ export class InicioComponent implements OnInit {
     this.spotyService.getNewReleases()
     .subscribe( (data : any)=>{
       this.listaNewReleases = data.albums.items;
-      console.log(data);
+      this.albums = data.albums;
+      console.log(data);  
     });
       
     this.spotyService.deletePlaylist();
   }
 
+
+  goNext(){
+    this.spotyService.getNextExitos(this.albums.next)
+        .subscribe((data : any)=>{
+          this.listaNewReleases = data.albums.items;
+          this.albums = data.albums;
+
+          console.log(this.listaNewReleases[0].name);  
+
+        });
+  }
+
+  goPrevious(){
+    this.spotyService.getPreviousExitos(this.albums.previous)
+        .subscribe((data : any)=>{
+          this.listaNewReleases = data.albums.items;
+          this.albums = data.albums;
+
+          console.log(this.listaNewReleases[0].name);  
+
+        });
+  }
 }
