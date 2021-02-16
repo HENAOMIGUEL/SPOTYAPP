@@ -12,10 +12,10 @@ export class SpotyService {
     getHeaders() {
 
         /*let header = new HttpHeaders();
-        header = header.set('Authorization', 'BQDuAFbjoochesKm1OTN4h2aKoAaj2uX_VCgJvnCEGt2CcurZ6UfdJ6rF3_vZbLyI2-CDpPw6qSlLM6ppaaKIQ35Qbv4hC4cIprD69ixosEF0qG1TlvN6oZ7j-7KkyhIrY6ZoyMMF_C-V1gXCgHXTLio__WuR3Xs5opuXVSHx_pkvFcxaNf_60v4gX77B_6NJ60fUgOGSPIztD1pEUAo9ubg9fz4imum_HnURlyxq8Xtbuv7N2mWDx60HOXICVYz7FtTDW5ALCZfry6FCk3I56d_zcpNjbaRTyrQ'
+        header = header.set('Authorization', '---'
         );*/
         const headers = new HttpHeaders({
-            'Authorization': 'Bearer BQA21khbQFv8RUZVXbxu6EciZD7T_CiTVsNe0SrE8uXpKKj2llbHG0_adCTI7jtFtzUNBjpkBsFiBdl3E1DfVgiVMN6mNUoqY7cg914MqLuJMFO99wTzWuLcBk_4VLRjDwSaOGmXdzuY5Bmrf-GEXHgo6U4WHR6qoa5lInE-QzcB1HoLuXemYm2P_fGB7dgL3s7qk6itRcr4vpubQacHNCjpxDrYKiWpuUOuO1lNzyFrbZO6DWKXRt1c987yOT1G_0FDo4vW6VUdrbLZMMfVa9OjbhsS3r4hTExt'
+            'Authorization': 'Bearer '
         });
 
         return headers;
